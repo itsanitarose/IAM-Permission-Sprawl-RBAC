@@ -1,2 +1,2 @@
 # IAM-Permission-Sprawl-RBAC
-Northwind Health · Permission Sprawl
+A fictional IAM case study focused on resolving permission sprawl through RBAC, security groups, least privilege, segregation of duties, and privileged access management at Northwind Health.
