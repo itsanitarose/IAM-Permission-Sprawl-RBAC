@@ -1,4 +1,4 @@
-# Anita Rose | Junior IAM Analyst | Cybersecurity
+# Anita Rose | Identity & Access Management | AI Security
 
 *Because in the age of AI, defence must be as smart as the threat.*
 
