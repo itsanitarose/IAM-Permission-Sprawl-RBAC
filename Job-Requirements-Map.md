@@ -4,7 +4,7 @@
 
 ## Overview
 
-This mapping connects IAM responsibilities identified across job descriptions from Gen II Fund Services, L&Q, Darktrace, SitusAMC and Paragon Banking Group to the evidence produced in the Northwind Health RBAC assessment.
+This project was developed by reverse-engineering common requirements found in entry-level and junior Identity and Access Management (IAM) job descriptions.
 
 The focus is on role-based access control, least privilege, access risk assessment, privileged access governance and practical remediation planning.
 
