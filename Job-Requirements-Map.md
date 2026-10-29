@@ -23,10 +23,4 @@ The focus is on role-based access control, least privilege, access risk assessme
 | Maintain accurate IAM documentation and provide clear evidence of access findings. | [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md): Documented current and proposed access. [04 — Access Findings and Risk Register](documents/04-Access-Findings-and-Risk-Register.md): Recorded findings, severity ratings and recommended actions. | IAM Documentation, Audit Evidence Preparation, Written Communication |
 | Identify opportunities to improve access management processes. | [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md): Identified inconsistent individual permissions and proposed role-based assignments. [05 — Remediation and Preventive Controls](documents/05-Remediation-and-Preventive-Controls.md): Defined controls to reduce future permission sprawl. | Continuous Improvement, IAM Process Design, Problem-Solving |
 
-## Value Demonstration
 
-The Northwind Health RBAC assessment demonstrates the ability to evaluate existing permissions against business responsibilities, identify excessive access and segregation-of-duties conflicts, and design a more consistent access model.
-
-The assessment connects individual findings to practical recommendations, including security-group design, privileged access restrictions, controlled migration and preventive governance measures.
-
-The project demonstrates structured IAM analysis, risk-based decision-making and clear technical documentation, with attention to both security requirements and operational continuit
