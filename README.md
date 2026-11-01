@@ -1,80 +1,94 @@
-# IAM Permission Sprawl & RBAC Design | Northwind Health
+# IAM: The Permission Sprawl
 
-*A fictional Identity and Access Management (IAM) case study focused on excessive permissions, role-based access control, segregation of duties and privileged access management.*
+## The Scenario
 
----
+It's my second week on the security team at Northwind Health, and a new ticket has landed on my desk.
 
-## Overview
+The problem? **Permission sprawl in Billing.**
 
-Northwind Health is a healthcare SaaS company with approximately 120 employees, supporting 400 clinics and handling sensitive patient information.
+Access has been granted one request at a time, leaving employees with permissions that don't always match their jobs.
 
-The Billing department has accumulated individually assigned permissions, resulting in inconsistent access between employees performing similar roles and excessive privileges across several accounts.
+### 🎫 The Ticket
 
-I reviewed the access assigned to six employees, compared their permissions against job responsibilities, identified security risks and designed a proposed Role-Based Access Control (RBAC) model.
+**IT Manager's Request:**
 
-**The objective:** Reduce unnecessary access, establish consistent job-based permissions and recommend a controlled transition without disrupting business operations.
+> "Everyone in Billing has been given access one request at a time, and it's a mess. Can you design proper roles, and flag anything that shouldn't be allowed in the first place?"
 
-## Key Findings
+*Audit date: 12 October 2026*
 
-| Severity | Count | Findings |
-|---|---:|---|
-| 🔴 Critical | 1 | IT Support account with all seven permissions, including financial approvals and system administration |
-| 🟠 High | 2 | Billing employees holding incompatible or unnecessary financial permissions |
-| 🟡 Medium | 2 | Excessive data export and refund approval permissions |
-| 🟢 No change | 1 | Billing Clerk access consistent with stated job responsibilities |
-| **Total** | **6** | **Six employee accounts reviewed** |
+## My Investigation
 
-*Severity classifications are proposed qualitative assessments based on the scenario.*
+I reviewed six employee accounts against their job responsibilities, looking for excessive access and permissions that could become dangerous when combined.
 
-## Top Priority — Fraser
+Three questions guided my investigation:
 
-Fraser works in IT Support but has all seven application permissions, including the ability to create payees, approve payments, approve refunds, export billing data and administer the system.
+- **Who has access they don't actually need?**
+- **What could someone do with those permissions combined?**
+- **How can I fix the risks without disrupting Billing?**
 
-This combination creates a significant least-privilege and segregation-of-duties concern.
+I used the findings to design an RBAC model, identify access changes and propose a three-step rollout plan.
 
-I recommend removing the six billing and financial permissions, verifying the scope of system administration and introducing controlled temporary elevation through Privileged Identity Management (PIM) and Just-in-Time (JIT) access where supported.
+## What I Found
 
-## Project Structure
+| Risk | Accounts |
+|:-----|:--------:|
+| 🔴 Critical | 1 |
+| 🟠 High | 2 |
+| 🟡 Low/Medium | 2 |
+| 🟢 No change | 1 |
 
-| Document | Purpose |
-|---|---|
-| [01 — Scenario and Scope](documents/01-Scenario-and-Scope.md) | Defines the business context, objectives and scope |
-| [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md) | Documents current permissions, proposed roles and security groups |
-| [03 — Access Risk Methodology](documents/03-Access-Risk-Methodology.md) | Explains risk criteria, least privilege and segregation-of-duties assessment |
-| [04 — Access Findings and Risk Register](documents/04-Access-Findings-and-Risk-Register.md) | Records excessive access, severity and remediation priorities |
-| [05 — Remediation and Preventive Controls](documents/05-Remediation-and-Preventive-Controls.md) | Proposes the rollout plan, access validation and PIM/JIT controls |
+**Five of the six accounts require permission changes.**
 
-## IAM Skills Demonstrated
+## Top Priority: Fraser
 
-- Role-Based Access Control (RBAC) design
-- Security-group and permission mapping
-- Least-privilege access assessment
-- Segregation-of-duties conflict identification
-- Qualitative access risk assessment and prioritisation
-- Privileged Identity Management (PIM) and Just-in-Time (JIT) access concepts
-- Access remediation planning and validation
-- Security documentation and reporting
+The most serious finding was **Fraser, an IT Support employee with all seven Billing system permissions**, including financial actions and system administration.
+
+It raised a question I kept coming back to:
+
+**Why should someone who fixes the system also be able to carry out financial transactions?**
+
+I recommended urgently removing Fraser's unnecessary financial permissions and using temporary, approved privileged access when technical support requires it.
+
+These were potential access risks, not evidence of wrongdoing.
+
+## Case Study Outcome
+
+The assessment produced:
+
+- A proposed RBAC design based on job responsibilities.
+- Findings by employee and access removal recommendations.
+- An investigation of segregation-of-duties (SoD) risks.
+- A three-step rollout plan that prioritises critical access without disrupting Billing.
 
 ## What I Learned
 
-This project strengthened my understanding of how individually assigned permissions can create inconsistent access and make governance more difficult.
+When I started this investigation, my focus was on identifying excessive permissions, designing roles and recommending what needed to be removed.
 
-A key lesson was recognising the difference between supporting an application and performing its business functions. IT Support may need administrative capabilities for troubleshooting, but that does not automatically justify access to financial transactions.
+But the further I went, the more questions I had about my own recommendations.
 
-I also learned that designing RBAC involves more than assigning security groups. Existing direct permissions must be removed and effective access verified to ensure the new roles enforce least privilege.
+One example was the Billing Supervisor role. At first, removing conflicting permissions seemed straightforward. Then I realised that some permissions are genuinely needed for the job, even when they create risks. That made me think about **additional controls instead of simply removing access**.
 
-## What I Would Improve
+I also reconsidered my rollout plan. Initially, Fraser's access was part of the wider migration. But why should a critical risk wait while everyone else's roles are being tested? I moved his access restrictions to the first step and connected that decision to a practical JIT solution for IT Support.
 
-With access to additional system information, I would:
+I found myself going back to earlier sections, questioning assumptions and improving the recommendations as the investigation developed.
 
-- Confirm the business owner and approval process for creating new payees.
-- Review the application's actual System Admin capabilities.
-- Test the proposed roles against real business workflows.
-- Validate segregation-of-duties controls at the transaction level.
-- Verify that legacy individual permissions were removed after migration.
-- Review audit logs and access changes to assess whether the controls operate as intended.
+**My biggest lesson here was that security analysis isn't always a straight line.** Sometimes looking more closely at a problem makes you rethink an earlier decision. What matters is being willing to question it, understand the consequences and make the recommendation stronger.
 
-These additional checks would provide stronger evidence that the proposed access model is appropriate and effective.
+## Explore the Investigation
+
+| Document | What's Inside |
+|:---------|:--------------|
+| **[01. Source Data](01.%20Document/01.%20Source%20Data.md)** | Original access and job requirements |
+| **[02. RBAC Design](01.%20Document/02.%20RBAC%20Design.md)** | Proposed roles and security groups |
+| **[03. Segregation of Duties (SoD)](01.%20Document/03.%20Segregation%20of%20Duties%20(SoD).md)** | Conflicting permissions and recommended controls |
+| **[04. Findings & Recommendations](01.%20Document/04.%20Findings%20%26%20Recommendations.md)** | Employee findings and risk priorities |
+| **[05. Rollout Plan](01.%20Document/05.%20Rollout%20Plan.md)** | Three-step migration and privileged access approach |
+
+---
+
+[← Week 1: The Access Review](https://github.com/itsanitarose/IAM-Access-Review) · [GitHub Profile](https://github.com/itsanitarose)
+
+*Northwind Health is a fictional healthcare organisation used for IAM training and portfolio development. No production changes were made.*
 
 ---
 
