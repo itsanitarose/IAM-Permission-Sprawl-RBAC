@@ -1,26 +1,21 @@
-# IAM Job Requirements Map
+# IAM Skills Map
 
-**Project:** Northwind Health | IAM Permission Sprawl & RBAC Design
+**Northwind Health | IAM Permission Sprawl & RBAC**
 
-## Overview
+This map links IAM Analyst job requirements to the work completed in this case study.
 
-This project was developed by reverse-engineering common requirements found in entry-level and junior Identity and Access Management (IAM) job descriptions.
+| Job Requirement | Evidence in This Project |
+|:----------------|:-------------------------|
+| **Role-Based Access Control (RBAC)** | [RBAC Design](01.%20Document/02.%20RBAC%20Design.md): Designed four job based roles with defined permissions and security groups. |
+| **Least Privilege Assessment** | [Findings & Recommendations](01.%20Document/04.%20Findings%20%26%20Recommendations.md): Compared six accounts with job requirements and identified unnecessary access in five. |
+| **Segregation of Duties (SoD)** | [Segregation of Duties](01.%20Document/03.%20Segregation%20of%20Duties%20(SoD).md): Investigated conflicting permissions, potential misuse and compensating controls. |
+| **Access Risk Assessment** | [Findings & Recommendations](01.%20Document/04.%20Findings%20%26%20Recommendations.md): Rated account risks and prioritised Fraser's excessive financial and administrative access. |
+| **Privileged Access Management (PAM)** | [Rollout Plan](01.%20Document/05.%20Rollout%20Plan.md): Proposed approved, time limited JIT access for IT troubleshooting without financial permissions. |
+| **Access Remediation Planning** | [Rollout Plan](01.%20Document/05.%20Rollout%20Plan.md): Developed a 3 step approach covering urgent restrictions, testing, migration and verification. |
+| **Access Review and Audit Evidence** | [Source Data](01.%20Document/01.%20Source%20Data.md) · [Findings & Recommendations](01.%20Document/04.%20Findings%20%26%20Recommendations.md): Preserved the original access records and documented account-level findings. |
 
-The focus is on role-based access control, least privilege, access risk assessment, privileged access governance and practical remediation planning.
+---
 
-## Skills & Requirements Mapping Matrix
-
-| Industry Job Requirement | Repository Deliverable & Evidence | Demonstrated Skill / Competency |
-|---|---|---|
-| Review individual and group access privileges to identify inappropriate access. | [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md): Compared existing permissions across six employees against their job responsibilities. | User Access Reviews, Permission Analysis, Access Governance |
-| Design role-based access controls and maintain appropriate group memberships. | [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md): Designed four security groups, a role-permission matrix and proposed group memberships. | RBAC Design, Security Group Design, Role Engineering |
-| Apply least-privilege principles to reduce excessive permissions. | [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md): Identified permissions outside role requirements. [04 — Access Findings and Risk Register](documents/04-Access-Findings-and-Risk-Register.md): Recommended targeted access removals. | Least Privilege, Entitlement Review, Access Risk Identification |
-| Identify segregation-of-duties conflicts involving sensitive business functions. | [03 — Access Risk Methodology](documents/03-Access-Risk-Methodology.md): Evaluated incompatible financial permissions. [04 — Access Findings and Risk Register](documents/04-Access-Findings-and-Risk-Register.md): Identified payee creation and payment approval conflicts. | Segregation of Duties, Financial Access Controls, Risk Assessment |
-| Review privileged access and recommend appropriate restrictions. | [04 — Access Findings and Risk Register](documents/04-Access-Findings-and-Risk-Register.md): Assessed Fraser's excessive technical and financial access. [05 — Remediation and Preventive Controls](documents/05-Remediation-and-Preventive-Controls.md): Proposed restricted administration and PIM/JIT controls. | Privileged Access Governance, Least Privilege, PIM/JIT Principles |
-| Assess access-related security risks and prioritise findings. | [03 — Access Risk Methodology](documents/03-Access-Risk-Methodology.md): Defined qualitative risk criteria and severity classifications. [04 — Access Findings and Risk Register](documents/04-Access-Findings-and-Risk-Register.md): Prioritised findings across six accounts. | Risk Evaluation, Risk Prioritisation, Analytical Decision-Making |
-| Support improvements to access governance and control processes. | [05 — Remediation and Preventive Controls](documents/05-Remediation-and-Preventive-Controls.md): Recommended role-based provisioning, periodic access reviews, SoD checks and access-change logging. | IAM Governance, Access Recertification, Preventive Control Design |
-| Support IAM changes while minimising disruption to business operations. | [05 — Remediation and Preventive Controls](documents/05-Remediation-and-Preventive-Controls.md): Developed a phased RBAC migration approach covering validation, testing, rollout and verification. | Change Planning, Operational Risk Awareness, Access Validation |
-| Maintain accurate IAM documentation and provide clear evidence of access findings. | [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md): Documented current and proposed access. [04 — Access Findings and Risk Register](documents/04-Access-Findings-and-Risk-Register.md): Recorded findings, severity ratings and recommended actions. | IAM Documentation, Audit Evidence Preparation, Written Communication |
-| Identify opportunities to improve access management processes. | [02 — Current Access and RBAC Design](documents/02-Current-Access-and-RBAC-Design.md): Identified inconsistent individual permissions and proposed role-based assignments. [05 — Remediation and Preventive Controls](documents/05-Remediation-and-Preventive-Controls.md): Defined controls to reduce future permission sprawl. | Continuous Improvement, IAM Process Design, Problem-Solving |
+[Back to Project Overview](https://github.com/itsanitarose/IAM-Permission-Sprawl-RBAC)
 
 
