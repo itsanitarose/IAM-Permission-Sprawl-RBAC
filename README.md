@@ -86,9 +86,9 @@ I found myself going back to earlier sections, questioning assumptions and impro
 
 ---
 
-[← Week 1: The Access Review](https://github.com/itsanitarose/IAM-Access-Review) · [GitHub Profile](https://github.com/itsanitarose)
+[IAM Skills Map](IAM%20Job%20Requirements%20Map.md) | [IAM Case Studies](https://github.com/itsanitarose) | [GitHub Profile](https://github.com/itsanitarose)
 
-*Northwind Health is a fictional healthcare organisation used for IAM training and portfolio development. No production changes were made.*
+
 
 ---
 
