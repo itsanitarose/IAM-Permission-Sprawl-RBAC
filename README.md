@@ -84,12 +84,16 @@ I found myself going back to earlier sections, questioning assumptions and impro
 | **[04. Findings & Recommendations](01.%20Document/04.%20Findings%20%26%20Recommendations.md)** | Employee findings and risk priorities |
 | **[05. Rollout Plan](01.%20Document/05.%20Rollout%20Plan.md)** | Three-step migration and privileged access approach |
 
----
-
-[IAM Skills Map](IAM%20Job%20Requirements%20Map.md) | [IAM Case Studies](https://github.com/itsanitarose) | [GitHub Profile](https://github.com/itsanitarose)
-
-
+<br>
 
 ---
+
+
+[← Week 1: Access Review](https://github.com/itsanitarose/IAM-Access-Review) · [All Case Studies](https://github.com/itsanitarose/IAM-Case-Studies) · [Week 3: The Agent With Too Many Keys →](https://github.com/itsanitarose/IAM-Agent-With-Too-Many-Keys)
+
+*Northwind Health is fictional. This is a portfolio assessment; no live production systems were changed.*
+
+
+
 
 
