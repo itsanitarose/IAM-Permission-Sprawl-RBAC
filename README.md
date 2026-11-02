@@ -8,6 +8,8 @@ The problem? **Permission sprawl in Billing.**
 
 Access has been granted one request at a time, leaving employees with permissions that don't always match their jobs.
 
+<sub><em>* Fictional scenario. Real world analysis.</em></sub>
+<br><br>
 ### 🎫 The Ticket
 
 **IT Manager's Request:**
