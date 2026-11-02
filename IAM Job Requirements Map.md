@@ -27,8 +27,6 @@ This map links IAM Analyst job requirements to the work completed in this case s
 
 ---
 
-[Back to Project Overview](https://github.com/itsanitarose/IAM-AI-Agent-Security-Review)
-
 [Back to Project Overview](https://github.com/itsanitarose/IAM-Permission-Sprawl-RBAC)
 
 
