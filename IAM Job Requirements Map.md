@@ -14,7 +14,20 @@ This map links IAM Analyst job requirements to the work completed in this case s
 | **Access Remediation Planning** | [Rollout Plan](01.%20Document/05.%20Rollout%20Plan.md): Developed a 3 step approach covering urgent restrictions, testing, migration and verification. |
 | **Access Review and Audit Evidence** | [Source Data](01.%20Document/01.%20Source%20Data.md) · [Findings & Recommendations](01.%20Document/04.%20Findings%20%26%20Recommendations.md): Preserved the original access records and documented account-level findings. |
 
+<br>
+
+### 🔄 Actively Learning
+
+*Beyond the core job requirements.*
+
+- **PowerShell for IAM:** Analyse identity data, identify orphaned accounts, flag excessive permissions and verify access changes.
+- **Non-Human Identity Management:** Service-account lifecycles, ownership and credential management.
+- **AI Agent Identity Security:** Agent identities, permissions, APIs, tools and connectors.
+- **AI Access Controls:** Delegated authorisation, least privilege and activity monitoring.
+
 ---
+
+[Back to Project Overview](https://github.com/itsanitarose/IAM-AI-Agent-Security-Review)
 
 [Back to Project Overview](https://github.com/itsanitarose/IAM-Permission-Sprawl-RBAC)
 
