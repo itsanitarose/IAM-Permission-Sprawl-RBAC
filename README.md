@@ -92,7 +92,7 @@ I found myself going back to earlier sections, questioning assumptions and impro
 
 [← Week 1: Access Review](https://github.com/itsanitarose/IAM-Access-Review) · [All Case Studies](https://github.com/itsanitarose/IAM-Case-Studies) · [Week 3: Agent Security Review →](https://github.com/itsanitarose/IAM-AI-Agent-Security-Review)
 
-*Northwind Health is fictional. No production systems were changed.*
+*Northwind Health is fictional. This is independent work. No production systems were changed.*
 
 
 
