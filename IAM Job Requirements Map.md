@@ -16,18 +16,13 @@ This map links IAM Analyst job requirements to the work completed in this case s
 
 <br>
 
-## 🔄 Actively Learning
+## 🔍 Areas of Interest
 
-*Beyond the core job requirements.*
-
-- **PowerShell & Microsoft Graph for IAM:** Automating identity tasks, querying directory data and managing access.
-- **Non-Human Identity Management:** Service account lifecycles, ownership, credential management and accountability.
-- **AI Agent Identity Security:** Agent identities, permissions, APIs, tools, connectors and delegated access.
+- **Non-Human Identity Management:** Service accounts, ownership and credential management.
+- **AI Agent Security:** Agent identities, permissions and access controls.
 
 ---
 
-
-[Back to Project Overview](./README.md)
-
+[Back to Project Overview](https://github.com/itsanitarose)
 
 
