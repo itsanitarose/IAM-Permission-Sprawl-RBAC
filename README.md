@@ -76,13 +76,13 @@ Basically, I kept going back to what I had written earlier. I questioned my own 
 
 <br>
 
-## What will I do differently next time?**
+## What will I do differently next time?
 
 I'd stop treating a plausible reason as a justification. With Fraser, I first accepted that someone in IT Support could have a technical reason for that access. A reason that sounds plausible isn't the same as one that was approved, limited, and reviewed. Next time, I'd ask for the approval and the control rather than looking for a reasonable explanation. I will stand on this question
 
 **Does this access still serve a real purpose, and what control protects against the risk when it does?**
 
-
+<br>
 
 ## Explore the Investigation
 
