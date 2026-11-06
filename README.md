@@ -64,7 +64,7 @@ But this is about his access, not his character. Nothing in the supplied data sh
 
 <br>
 
-## Looking Back at the case
+## Looking Back at the Case
 
 When I started this case, initially my focus was on identifying excessive permissions, designing roles, and recommending what needed to be removed. But the further I went, the more questions I had about my own recommendations.
 
