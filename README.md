@@ -66,7 +66,7 @@ But this is about his access, not his character. Nothing in the supplied data sh
 
 ## Looking Back at the Case
 
-When I started this case, initially my focus was on identifying excessive permissions, designing roles, and recommending what needed to be removed. But the further I went, the more questions I had about my own recommendations.
+My initial focus was on identifying excessive permissions, designing roles, and recommending what needed to be removed. But the further I went, the more questions I had about my own recommendations.
 
 Take the Billing Supervisor role. At first, removing conflicting permissions seemed straightforward. Then I realised that some permissions are genuinely needed for the job, even when they create risks. That made me think about **additional controls instead of simply removing access.**
 
