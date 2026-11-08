@@ -1,3 +1,4 @@
+
 # IAM: The Permission Sprawl
 
 ## 🎫 The Ticket
@@ -6,83 +7,89 @@ It's 12 October 2026, my second week on the security team at Northwind Health, a
 
 The IT Manager writes:
 
-> Everyone in Billing has been given access one request at a time, and it's a mess. **Can you design proper roles, and flag anything that shouldn't be allowed in the first place?**
+> Everyone in Billing has been given access one request at a time, and it's a mess. Can you design proper roles, and flag anything that shouldn't be allowed in the first place?
 
-Before designing anything, I need to understand how the access got this way.
+<BR>
 
-<br>
+## What's the Risk?
 
-## What I'm Working With
+After reading the ticket, I looked through the access records to understand how permissions had been assigned. I noticed that some employees had access beyond what their roles required. This looked like classic permission sprawl.
 
-I have six employee accounts in Billing, along with their job responsibilities and the permissions each one holds. Access was granted one request at a time, so every permission made sense when it was approved, but nobody looked at the whole picture.
+It raised two concerns: internal and external risks.
 
-I'm checking for **permissions that don't fit the job**, and for combinations that become risky together.
+On the inside, a Billing employee who can both set up and approve payments could misuse that access. They could also make an honest mistake that goes unnoticed if there is no second check.
 
-<br>
+From the outside, if an attacker compromises that account, they inherit the same permissions.
 
-## How I Worked Through It
+So the question wasn't just who had too much access, but **what those permissions could allow someone to do together.**
 
-**1. Who has access they don't actually need?**
+<BR>
+
+## The Investigation
+
+### 1. Who has access they don't actually need?
+
 I compared each account's permissions against the person's job responsibilities. Where the two didn't match, I treated the extra access as a finding.
 
-**2. What could someone do with those permissions combined?**
-A single permission can look harmless. Together they can let one person start and approve the same transaction, so I checked combinations for segregation of duties (SoD) conflicts.
+### 2. What could someone do with those permissions combined?
 
-**3. How can I fix the risks without disrupting Billing?**
+A single permission can look harmless. Together, they can let one person start and approve the same transaction, so I checked combinations for segregation of duties (SoD) conflicts.
+
+### 3. How can I fix the risks without disrupting Billing?
+
 Removing access is only half the job. Some permissions are genuinely needed, so I designed an RBAC model around job roles and planned the changes in stages.
 
-**4. What needs attention first?**
-I ranked the accounts by risk and built a 3 step rollout plan that deals with critical access first. Not every account needs the same response.
+### 4. What needs attention first?
 
-<br>
+I ranked the accounts by risk and built a three-step rollout plan that deals with critical access first. Not every account needs the same response.
+
+<BR>
 
 ## What I Found
 
-The review covered six accounts.
+I reviewed six accounts in the Billing system. Five needed permission changes.
 
-| Severity      | Accounts | Finding                                                |
-| ------------- | -------: | ------------------------------------------------------ |
-| 🔴 Critical   |        1 | IT Support employee with all seven Billing permissions |
-| 🟠 High       |        2 | [Confirm findings from the assessment]                 |
-| 🟡 Low/Medium |        2 | [Confirm findings from the assessment]                 |
-| 🟢 No change  |        1 | Access matches job responsibilities                    |
-| **Total**     |    **6** |                                                        |
+| Severity | Accounts | Finding |
+|---|---:|---|
+| 🔴 Critical | 1 | IT Support account with all seven Billing system permissions, including System Admin |
+| 🟠 High | 2 | Excessive financial permissions, including conflicting transaction and approval rights |
+| 🟡 Medium | 2 | Access beyond what the employees' roles required |
+| 🟢 No change | 1 | Permissions matched the employee's responsibilities |
+| **Total** | **6** | |
 
-Five of the six accounts require permission changes.
+**Fraser's account stood out.** He worked in IT Support but held every Billing permission, including the ability to create payees and approve payments.
 
- <br>
- 
-## Why We Start With Fraser
+<BR>
 
-The most serious finding was **Fraser, an IT Support employee with all seven Billing system permissions**, including financial actions and system administration.
-
-That raised a simple question: why can the person who fixes the system also move the money?
+## Decisions & Recommendations
 
 
-My recommendation is to remove his financial permissions urgently and use temporary, approved access for the technical tasks that need it.
-But this is about his access, not his character. Nothing in the supplied data shows that Fraser misused those permissions. The concern is that his account allows financial actions his job doesn’t require. I don’t need to assume bad intentions to flag that, the access itself is what needs fixing.
+This raised a question I couldn't ignore: **Why can the person who fixes the system also move the money?**
 
-<br>
+His combination of permissions created two serious risks:
 
-## Looking Back at the Case
+- **Insider fraud:** Someone misusing Fraser's account could potentially create a fraudulent payee and approve payments without independent oversight. If his System Admin access also allows changes to audit settings or logs, they might be able to interfere with the records used to detect that activity. I would need to verify those administrative capabilities.
 
-My initial focus was on identifying excessive permissions, designing roles, and recommending what needed to be removed. But the further I went, the more questions I had about my own recommendations.
+- **Account compromise:** If an attacker gained access to Fraser's account, they could inherit both his financial permissions and administrative access. One compromised account could therefore expose several sensitive functions at once.
 
-Take the Billing Supervisor role. At first, removing conflicting permissions seemed straightforward. Then I realised that some permissions are genuinely needed for the job, even when they create risks. That made me think about **additional controls instead of simply removing access.**
+I couldn't tell from the permission records how Fraser ended up with all seven permissions. Were they granted for an earlier support task and never removed, or did he inherit them through an overly broad role?
 
-I also reconsidered my rollout plan. Fraser's access was originally part of the wider migration, but a critical risk shouldn't wait while everyone else's roles are being tested. I moved his restrictions to the first step and connected that decision to a practical just-in-time (JIT) solution for IT Support.
+**My recommendation** was to remove his six unnecessary financial and Billing permissions, while checking which administrative access he genuinely needed for IT Support. For tasks requiring elevated privileges, I recommended temporary, just-in-time (JIT) access instead of permanent access.
 
-Basically, I kept going back to what I had written earlier. I questioned my own assumptions and improved my recommendations as the investigation developed, realising that security analysis isn't always a straight line. Looking closer at something can make you rethink an earlier choice, and being willing to do that leads to stronger, better recommendations.&#x20;
+<BR>
 
-<br>
+## What Will I Do Differently Next Time?
 
-## What will I do differently next time?
+This time, I started with individual accounts and worked towards designing an RBAC model. Next time, I'd reverse that approach.
 
-I'd stop treating a plausible reason as a justification. With Fraser, I first accepted that someone in IT Support could have a technical reason for that access. A reason that sounds plausible isn't the same as one that was approved, limited, and reviewed. Next time, I'd ask for the approval and the control rather than looking for a reasonable explanation. I will stand on this question
+I'd start by understanding what each role needs to do, then design what the access should look like. That would give me a clearer baseline to compare against the existing permissions, rather than working out what to remove one account at a time.
 
-**Does this access still serve a real purpose, and what control protects against the risk when it does?**
+I'd still address urgent risks like Fraser's immediately, but I'd approach the wider review with a clearer picture of the access model I was trying to achieve.
 
-<br>
+I'd also bring relevant security guidance into the investigation earlier, using it to shape the controls I recommend and identify what needs testing.
+
+<BR>
+
 
 ## Explore the Investigation
 
