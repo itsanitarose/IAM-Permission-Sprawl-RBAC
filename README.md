@@ -1,5 +1,5 @@
 
-# The Permission Sprawl & RBAC
+# Permission Sprawl & RBAC
 
 ## 🎫 The Ticket
 
