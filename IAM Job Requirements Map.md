@@ -1,6 +1,6 @@
 # IAM Skills Map
 
-**Northwind Health | IAM: Permission Sprawl & RBAC**
+**Northwind Health | Permission Sprawl & RBAC**
 
 This map links IAM Analyst job requirements to the work completed in this case study.
 
